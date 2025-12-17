@@ -45,49 +45,92 @@ const fadeInUp = {
 function GridBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-      {/* Gradient Orbs */}
-      <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-violet-500/30 to-fuchsia-500/15 blur-[100px] animate-pulse" />
-      <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-gradient-to-br from-cyan-500/15 to-blue-500/30 blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-[30%] right-[20%] w-[30%] h-[30%] rounded-full bg-emerald-500/10 blur-[80px]" />
-      <div className="absolute bottom-[30%] left-[20%] w-[25%] h-[25%] rounded-full bg-primary/10 blur-[60px]" />
+      {/* === SPOTLIGHT EFFECTS === */}
+      {/* Main center spotlight */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] rounded-full bg-gradient-radial from-primary/8 via-transparent to-transparent blur-3xl" />
       
-      {/* Main Grid Pattern - More visible */}
+      {/* Top spotlight */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[40%] rounded-full bg-gradient-to-b from-violet-500/20 to-transparent blur-[80px]" />
+      
+      {/* Bottom spotlight */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[70%] h-[40%] rounded-full bg-gradient-to-t from-cyan-500/15 to-transparent blur-[80px]" />
+
+      {/* === GRADIENT ORBS === */}
+      <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-gradient-to-br from-violet-600/25 to-fuchsia-500/10 blur-[80px] animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-gradient-to-br from-cyan-500/15 to-blue-600/25 blur-[80px] animate-pulse" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-[50%] left-[60%] w-[20%] h-[20%] rounded-full bg-emerald-500/15 blur-[60px] animate-pulse" style={{ animationDelay: '0.5s' }} />
+      <div className="absolute top-[20%] right-[10%] w-[15%] h-[15%] rounded-full bg-pink-500/10 blur-[50px] animate-pulse" style={{ animationDelay: '2s' }} />
+      
+      {/* === BENTO GRID PATTERN - HIGH VISIBILITY === */}
+      <div 
+        className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)
+          `,
+          backgroundSize: '80px 80px',
+        }}
+      />
+      
+      {/* Secondary smaller grid for bento effect */}
       <div 
         className="absolute inset-0 opacity-[0.04] dark:opacity-[0.06]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgb(var(--foreground-rgb, 0 0 0) / 0.3) 1px, transparent 1px),
-            linear-gradient(to bottom, rgb(var(--foreground-rgb, 0 0 0) / 0.3) 1px, transparent 1px)
+            linear-gradient(to right, currentColor 1px, transparent 1px),
+            linear-gradient(to bottom, currentColor 1px, transparent 1px)
           `,
-          backgroundSize: '50px 50px',
+          backgroundSize: '20px 20px',
         }}
       />
       
-      {/* Dotted Pattern Overlay */}
-      <div 
-        className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
-        style={{
-          backgroundImage: `radial-gradient(circle, currentColor 1px, transparent 1px)`,
-          backgroundSize: '25px 25px',
-        }}
-      />
+      {/* === ABSTRACT DECORATIONS - LEFT SIDE === */}
+      <div className="absolute left-0 top-[20%] w-[300px] h-[400px]">
+        {/* Abstract shape 1 - Circle */}
+        <div className="absolute top-0 left-[-50px] w-[200px] h-[200px] rounded-full border border-primary/20 dark:border-primary/30" />
+        {/* Abstract shape 2 - Smaller circle */}
+        <div className="absolute top-[80px] left-[20px] w-[80px] h-[80px] rounded-full bg-gradient-to-br from-violet-500/10 to-transparent" />
+        {/* Abstract shape 3 - Line */}
+        <div className="absolute top-[150px] left-[-30px] w-[150px] h-[2px] bg-gradient-to-r from-transparent via-primary/30 to-transparent rotate-45" />
+        {/* Abstract shape 4 - Square */}
+        <div className="absolute top-[250px] left-[10px] w-[60px] h-[60px] border border-cyan-500/20 rotate-45" />
+        {/* Abstract dots */}
+        <div className="absolute top-[320px] left-[40px] w-3 h-3 rounded-full bg-primary/30" />
+        <div className="absolute top-[340px] left-[60px] w-2 h-2 rounded-full bg-violet-500/40" />
+        <div className="absolute top-[310px] left-[80px] w-4 h-4 rounded-full bg-fuchsia-500/20" />
+      </div>
       
-      {/* Diagonal Lines for texture */}
-      <div 
-        className="absolute inset-0 opacity-[0.015] dark:opacity-[0.02]"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 35px,
-            currentColor 35px,
-            currentColor 36px
-          )`,
-        }}
-      />
+      {/* === ABSTRACT DECORATIONS - RIGHT SIDE === */}
+      <div className="absolute right-0 bottom-[20%] w-[300px] h-[400px]">
+        {/* Abstract shape 1 - Large ring */}
+        <div className="absolute bottom-0 right-[-80px] w-[250px] h-[250px] rounded-full border border-cyan-500/20 dark:border-cyan-500/30" />
+        {/* Abstract shape 2 - Inner ring */}
+        <div className="absolute bottom-[40px] right-[-30px] w-[150px] h-[150px] rounded-full border border-blue-500/15" />
+        {/* Abstract shape 3 - Gradient blob */}
+        <div className="absolute bottom-[100px] right-[30px] w-[100px] h-[100px] rounded-full bg-gradient-to-tl from-cyan-500/15 to-transparent" />
+        {/* Abstract shape 4 - Diamond */}
+        <div className="absolute bottom-[220px] right-[20px] w-[50px] h-[50px] border border-emerald-500/25 rotate-45" />
+        {/* Cross lines */}
+        <div className="absolute bottom-[280px] right-[60px] w-[100px] h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent -rotate-12" />
+        <div className="absolute bottom-[260px] right-[50px] w-[80px] h-[1px] bg-gradient-to-r from-transparent via-cyan-500/25 to-transparent rotate-12" />
+        {/* Abstract dots */}
+        <div className="absolute bottom-[350px] right-[100px] w-3 h-3 rounded-full bg-cyan-500/30" />
+        <div className="absolute bottom-[370px] right-[120px] w-2 h-2 rounded-full bg-blue-500/40" />
+      </div>
       
-      {/* Radial Fade from center */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_70%)]" />
+      {/* === TOP DECORATIONS === */}
+      <div className="absolute top-0 left-[30%] w-[200px] h-[100px]">
+        <div className="absolute top-[-20px] left-0 w-[80px] h-[80px] rounded-full border border-violet-500/15 dark:border-violet-500/25" />
+        <div className="absolute top-[20px] left-[60px] w-[40px] h-[40px] border border-primary/20 rotate-45" />
+      </div>
+      
+      {/* === FLOATING ABSTRACT SHAPES === */}
+      <div className="absolute top-[60%] left-[10%] w-[100px] h-[100px] rounded-full border border-dashed border-primary/10 animate-spin" style={{ animationDuration: '30s' }} />
+      <div className="absolute top-[30%] right-[15%] w-[60px] h-[60px] rounded-full border border-dashed border-cyan-500/15 animate-spin" style={{ animationDuration: '25s', animationDirection: 'reverse' }} />
+      
+      {/* === RADIAL FADE FROM CENTER === */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_30%,var(--background)_80%)]" />
     </div>
   );
 }
