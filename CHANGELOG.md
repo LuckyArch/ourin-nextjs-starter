@@ -7,6 +7,51 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2024-12-17
+
+### 🚀 Major Update: Extended Typography & Premium UI
+
+#### Added
+
+##### 10 New Fonts (Total: 16 Fonts)
+- **Display & Headings:**
+  - `Space Grotesk` — Tech & bold
+  - `Poppins` — Friendly & versatile  
+  - `Raleway` — Elegant thin/bold
+  - `Manrope` — Modern geometric
+- **Body Text:**
+  - `Nunito` — Rounded & friendly
+  - `DM Sans` — Clean geometric
+  - `Source Sans 3` — Adobe's open font
+- **Serif:**
+  - `Lora` — Contemporary serif
+  - `Merriweather` — Screen-optimized
+- **Monospace:**
+  - `Fira Code` — Ligatures support
+
+##### New UI Components & Sections
+- **Animated Stats Section:** Counter animations for utilities, fonts, hooks, and CSS lines.
+- **Font Showcase Grid:** Interactive preview of all 16 fonts with hover effects.
+- **Enhanced Hero:** Gradient orb backgrounds, animated grid pattern, tech stack pills.
+- **CTA Section:** Gradient background with call-to-action buttons.
+- **Privacy Policy Page:** Full legal content at `/privacy`.
+- **Terms of Service Page:** MIT license explanation at `/terms`.
+
+##### UI Improvements
+- Smoother Framer Motion animations with stagger effects.
+- Improved floating navbar with scroll-aware transparency.
+- Feature cards with hover glow and rotation effects.
+- Code block with syntax-highlighted typewriter effect.
+- Footer with social icons and multi-column layout.
+
+#### Changed
+- Upgraded font count from 6 to 16 fonts.
+- Reorganized font CSS variables by category (display, body, serif, mono, hand).
+- Updated CopyCommand component with improved styling.
+- Enhanced responsive design across all sections.
+
+---
+
 ## [1.0.0] - 2024-12-17
 
 ### 🎉 Initial Release
